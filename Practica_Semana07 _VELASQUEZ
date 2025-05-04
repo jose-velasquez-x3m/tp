@@ -1,0 +1,77 @@
+##1.	Implementa un menú con dos opciones: “1. COLECCION NOMBRES” y “5. SALIR” Deberás usa la estructura DO-WHILE para la validación e ingreso de Nombres y verificar si es del NRC 18141.
+import matplotlib.pyplot as plt
+import math
+listaNombres = []
+NRC = 18141
+while(True):
+  while(True):
+    print("1. COLECCION NOMBRES")
+    print("2. COLECCION DISTRITOS")
+    print("3. FACTORIAL CON PRUEBA DE ESCRITORIO")
+    print("4. TEMPERATURAS DE DEPARTAMENTOS")
+    print("5. SALIR")
+    opciones = str(input("Selecciona una opcion (1)(2)(3)(4)(5)"))
+    break
+  if opciones == "1":
+    while(True):
+      Nombre = input('Ingresa tu nombre y apellido: ')
+
+      if Nombre == "salir":
+        print("La lista de nombres es:" )
+        print( )
+        for Nombre in listaNombres:
+          print("\n",Nombre)
+          break
+        break
+      input('Ingresa tu NRC: ')
+      if NRC == 18141:
+         listaNombres.append(Nombre)
+      else:
+        print("El NRC no es correcto")
+        break
+
+
+  elif opciones == "2":
+    tuplaDistri = ('Carhuacallanga', 'Chacapampa', 'Chicche', 'Chilca', 'Chongos Alto', 'Chupuro', 'Colca', 'Cullhuas', 'El Tambo', 'Huacrapuquio', 'Hualhuas', 'Huancán', 'Huancayo', 'Huasicancha', 'Huayucachi', 'Ingenio', 'Pariahuanca', 'Pilcomayo', 'Pucará', 'Quichuay', 'Quilcas', 'San Agustín de Cajas', 'San Jerónimo de Tunán', 'San Pedro de Saño', 'Santo Domingo de Acobamba', 'Sapallanga', 'Sicaya', 'Viques')
+
+
+    def funcionDistri (Distritos):
+      distritos = input("Ingrese el nombre de un distrito: ")
+      if (distritos in tuplaDistri):
+        print("Si existe el Distrito")
+      else:
+        print("No existe el Distrito")
+      return
+
+    funcionDistri(tuplaDistri)
+
+
+  elif opciones == "3":
+    Dni = int(input("Ingrese el ultimo numero de su DNI: "))
+    def funcionFactorial(Dni):
+        factorial= math.factorial(Dni)
+        print(factorial)
+    funcionFactorial(Dni)
+    break
+
+  elif opciones == "4":
+
+    regiones = ['Amazonas', 'Ancash', 'Apurímac', 'Arequipa', 'Ayacucho', 'Cajamarca', 'Cusco', 'Huancavelica', 'Huánuco', 'Ica', 'Junín', 'La Libertad', 'Lambayeque', 'Lima', 'Loreto', 'Madre de Dios', 'Moquegua', 'Pasco', 'Piura', 'Puno', 'San Martín','Tacna', 'Tumbes', 'Ucayali']
+    temperaturas= [22,15,20,17,14,14,12,10,19,21,16,23,20,24,25,23,15,12,20,8,22,18,21,24]
+    plt.title("Temperaturas de regiones usando matplolib")
+    plt.xlabel("Regiones")
+    plt.ylabel("Temperaturas")
+    plt.bar(regiones,temperaturas)
+    plt.show()
+    break
+
+
+  elif opciones == "5":
+    print("\nUsted salio de el menú de opciones")
+    break
+
+  else:
+    print("Opcion no valida")
+    break
+  break
+
